@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+<head>
+	<script type="text/javascript" src="JSON/userstorage.json"></script>
+	<title>ReveryReview</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+	
+	<link rel="stylesheet" href="css/bodystyle.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/sphere.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/popup.css" type="text/css" media="all" />
+	
+	<script src="js/prefixfree.min.js"></script>
+	<script src="js/orderConfirmation.js"></script><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+
+
+<body>
+
+	<div id="header" class="bookShell">
+	
+	<div id="header">
+		<img src="css/images/headerbook.png" height="180" width="884" >
+    </div>
+
+		<div id="styleNav">
+			<ul>
+				<li><a href="home.html">Home</a></li><li>|</li>
+				<li><a href="#products">Products</a></li><li>|</li>
+				<li><a href="about.html">About Us</a></li><li>|</li>
+				<li><a href="contact.html">Contacts</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+			</ul>
+		</div>
+		<br/>
+
+		<div class="nospace">&nbsp;</div>
+	</div>
+
+	<div id="slider">
+		<div class="bookShell">
+			<ul>
+				<li>
+					<div class="image">
+						<img src="css/images/slid.png" alt="" />
+					</div>
+					<div class="details">
+						<h2>ReveryReview</h2>
+	
+						<p class="title">ReveryReview has over two million book titles for sale online. </p>
+						<p class="description">We've been selling books online for over ten years. We are secure, fast, reliable and accessible.
+							Enjoy the best possible online book buying experience with ReveryReview.com.</p>
+						<a href="books.html" class="readMore">Read More</a>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<img src="css/images/slid.png" alt="" />
+					</div>
+					<div class="details">
+						<h2>ReveryReview</h2>
+						<h3>Free shipping</h3>
+						<p class="title">The widest range of titles of any bookshop. </p>
+						<p class="description">Largest range of Books from the widest range of genres, FREE delivery to all customers in the UK.</p>
+						<a href="delivery.html" class="readMore">Read More</a>
+					</div>
+				</li>
+
+			</ul>
+			<div class="nav">
+				<a href="#">1</a>
+				<a href="#">2</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="main" class="bookShell">
+		
+		<b>Filter by:</b>
+		<br/><br/>
+		<div id="itemAddToCart"></div>
+		<div id="im"></div>
+
+		<div id="content">
+
+  	<div id = "tabs">
+      <ul>
+        <li>
+		<div class="search-bar">
+                  <input type="text" class="sfield" name="searchterm" maxlength="30" id="inputText" value="Type title...">
+                  <input type="image" class="searchbutton" name="search" src="css/images/search.gif" alt="Search" id="button">
+        </div>
+		</li><li>
+          <a href = "#product"> 
+            Products
+          </a>
+        </li>
+        <li>
+          <a href = "#cart">
+            Basket
+          </a>
+        </li>
+		
+      </ul>
+    
+	<div id = "product">
+	
+	<section>
+	<table id="results"></table>
+    <table id="products2"></table><br/>
+    <table id = "products"></table>
+	</section>
+
+    </div>
+	  
+
+    <div id = "cart">
+	  
+    <div id="accordion">
+   <h3><a href="#">Basket</a></h3>
+   
+   <div>
+   <table id = "AssignShoppingCart">
+          <tr>
+            <td>Items</td><td>Cost</td><td>Quantity</td><td>Subtotal</td><td></td>                        
+          </tr>
+    </table> 
+
+	<table>
+        <tr>
+          <td id = "total"><td >Total:</td><td><input type = "text" value = 0 id = "calculateTotal2"/><a href="#" onClick="openNextAccordionPanel()">Checkout</a></td>
+          </td>
+        </tr>
+    </table>	
+   </div>
+   
+   <h3><a href="#">Login</a></h3>
+   <div>
+   
+     <form name="login">
+		<div class="labelInputArea">
+		<label for="Username" class="lable">Username:</label>
+		<input name="id" type="text" value="" id="username"/>
+		
+		</div>
+		<div class="labelInputArea">
+		<label for="Password" class="lable">Password:</label>
+		<input name="pass" type="password" value="" id="password"/>
+		</div>
+		<br />
+		<input type="button" value="Login" name="submit" onClick="loginForm(this.form);"/>
+	</form>
+
+   </div>
+   
+   <h3><a href="#">Delivery Information</a></h3>
+
+   <div>
+   <form name="Delivery">
+		<div class="labelInputArea">
+		<label for="firstname" class="lable">First Name:</label>
+		<input name="fname" type="text" value="" id="firstname"/>
+		</div>
+		<div class="labelInputArea">
+		<label for="lastname" class="lable">Last Name:</label>
+		<input name="lname" type="text" value="" id="lastname"/>
+		</div>
+		<div class="labelInputArea">
+		<label for="address" class="lable">Address/Post Code:</label>
+		<input name="address" type="text" value="" id="address"/>
+		</div>
+		<br />
+		<input type="button" value="Save" name="submit" onClick="openNextAccordionPanel()"/>
+	</form>
+   
+   </div>
+   
+   <h3><a href="#">Payment Information</a></h3>
+
+   <div>
+   <form name="Delivery">
+		<div class="labelInputArea">
+		<label for="cardnumber" class="lable">Card Number:</label>
+		<input name="cnumber" type="text" value="" />
+		</div>
+		<div class="labelInputArea">
+		<label for="expirationdate" class="lable">Expiration Date:</label>
+		<input name="exp1" type="text" value="" size="5"/> /
+		<input name="exp2" type="text" value="" size="5"/>
+		</div>
+		<div class="labelInputArea">
+		<label for="email" class="lable">Email:</label>
+		<input name="email" type="text" value="" />
+		</div>
+		<br />
+		<input type="button" value="Pay" name="submit" onClick="openNextAccordionPanel();orderConfirmation()"/>
+	</form>
+   
+   </div>
+   
+   <h3><a href="#">Order Summary</a></h3>
+
+   <div>
+   <div class="labelInputArea">
+		<label for="firstname" class="lable">First Name:</label>
+		<p id="myfirstname"></p>
+   </div>
+   <div class="labelInputArea">
+		<label for="lastname" class="lable">Last Name:</label>
+		<p id="mylastname"></p>
+   </div>
+   
+   <div class="labelInputArea">
+		<label for="address" class="lable">Address:</label>
+		<p id="myaddress"></p>
+
+   </div>
+   
+   <div class="labelInputArea">
+		<label for="lastname" class="lable">Total Price:</label>
+		£<input type = "text" value = 0 id = "calculateTotal3" disabled="disabled"/>
+   </div>
+
+   <br/><p>Thank you for your order.</p>
+   
+   </div>
+
+
+	</div>
+		 
+
+      </div>
+	  
+         
+  	</div>  
+	<br/><h3 style="color:black">Featured Books</h3>
+	<div class="zoomin">
+	  <a href="#" class="link">
+		<img src="css/images/3.jpg" class="image animate">
+		<span class="blend animate">
+		  <strong class="head">Savage Harvest</strong>
+		  <span class="text">
+			The mysterious disappearance of Michael Rockefeller in New Guinea in 1961 has kept the world and his powerful, influential family guessing for years.
+		  </span>
+		</span>
+	  </a>
+	</div>
+
+	<div class="zoomin">
+	  <a href="#" class="link">
+		<img src="css/images/6.jpg" class="image animate">
+		<span class="blend animate">
+		  <strong class="head">Hunting Warbirds</strong>
+		  <span class="text">
+			Winged treasure they call them–the lost remains of the great American fighter planes and bombers that won World War II. 
+		  </span>
+		</span>
+	  </a>
+	</div>
+
+	<div class="zoomin">
+	  <a href="#" class="link">
+		<img src="css/images/16.jpg" class="image animate">
+		<span class="blend animate">
+		  <strong class="head">The Pact</strong>
+		  <span class="text">
+			For eighteen years the Hartes and the Golds have lived next door to each other, sharing everything from Chinese food to chicken pox to carpool duty.
+		  </span>
+		</span>
+	  </a>
+	</div>
+   <script src = "js/shoppingCart.js"></script>
+   
+
+	</div>
+
+	<div class="nospace">&nbsp;</div>
+
+	<script src="js/index.js"></script>
+
+	</div>
+
+	<div class="nospace">&nbsp;</div>
+	</div>
+
+	<div id="footer" class="bookShell">
+		<div class="top">
+			<div class="cnt">
+				<div class="col about">
+					<h4>About ReveryReview</h4>
+					<p>ReveryReview.com has been delivering an outstanding service to our worldwide customers for over ten years. We are successful, dedicated and truly independent. </p>
+				</div>
+
+				<div class="nospace">&nbsp;</div>
+				<div class="copy">
+					<p>&copy; <a href="home.html">ReveryReview.com</a></p>
+				</div>
+			</div>
+			
+		</div>
+		 
+		<div id="container1">
+		<div class="sphere s-gold"></div>
+		<div class="sphere s-5"></div>
+		<div class="sphere s-4"></div>
+		<div class="sphere s-3"></div>
+		<div class="sphere s-2"></div>
+		<div class="sphere s-1"></div>
+	</div>
+	</div><script type="text/javascript" src="js/slider.js"></script>
+
+	
+	<!-- The reason why the javascript code below 
+	cannot be placed in a separate file is
+	that the accordion will not function properly. -->
+	<script type='text/javascript'>//<![CDATA[ 
+
+$("#accordion").accordion();
+
+    var $accordion = $("#accordion").accordion();
+    
+	function openNextAccordionPanel() {
+	var current = $accordion.accordion("option", "active"),
+        maximum = $accordion.find("h3").length,
+        next = current + 1 === maximum ? 0 : current + 1;
+                $accordion.accordion("activate", next);
+        
+	}
+	function loginForm(form) {
+
+	var mydata = JSON.parse(data);
+	var a = mydata[0].username;
+	var b = mydata[0].password;
+
+	if (form.id.value==a) { 
+	if (form.pass.value==b) {       
+	openNextAccordionPanel();
+
+	} else {
+	alert("Invalid Password")
+	}
+	} else {  alert("Invalid UserID")
+	}
+	}
+  
+//]]>  
+
+</script>
+</body>
+</html>
